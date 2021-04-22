@@ -8,7 +8,7 @@ What the server sends is a string representation of a large string of integers. 
 I first knocked the outer brackets (and a left over new line) off the string, split it at ", ", then created a new list 
 of integers with pythons mapping function.   
 
-*EDIT*  I just learned about `literal_eval()` when attempting jay2... use that to turn the string into a python array instead of what I did here.  
+*EDIT*  I just learned about `literal_eval()` when attempting jay2... use that to turn the string into a python list instead of what I did here.  
 
 An algorithm for Max sub array is easy to find online, so I found one that had linear time and modified it to return a thruple.  
 Sending a message back to the server consisting of the correct values gave me a flag.  
