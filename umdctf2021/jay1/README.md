@@ -13,7 +13,7 @@ of integers with pythons mapping function.
 An algorithm for Max sub array is easy to find online, so I found one that had linear time and modified it to return a thruple.  
 Sending a message back to the server consisting of the correct values gave me a flag.  
 
-`nc    6001` returns  
+`nc chals3.umdctf.io 6001` returns  
 ```
 ██   ██ ███████ ██      ██████  
 ██   ██ ██      ██      ██   ██  
