@@ -16,12 +16,13 @@ if __name__ == "__main__":
     client = MySocket(s)
     client.connect(IP, PORT)
     initialMessage = client.myreceive2Suffix(SUFFIX)
-    # print("{}\nMessage Length: {}".format(initialMessage, len(initialMessage)))
+    print("{}\nMessage : {}".format(initialMessage, len(initialMessage)))
     response = "\n".encode()
     client.mysend(response)
     arr = client.myreceive2Suffix(SUFFIX)
     # Before passing the list along we have to clean the data,
     # becasue it is a string at this point
+    print("{}\nArray : {}".format(arr, len(arr)))
     newarr = arr.lstrip("[").rstrip("]\n")
     listRes = list(newarr.split(", "))
     listInts = list(map(int, listRes))
