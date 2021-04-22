@@ -1,5 +1,5 @@
 # Jay 1
-_I will rewrite this with images lateer_  
+_This write up sucks. I will rewrite this later_  
 This was a matter of securing a tcp connection and conversing with the server.  
 My first tcp connection was set to receive the basic 1024 bytes we learn in examples but that was not getting the entire intro message from the server.
  I used a function to receive from the socket until a "\n\n" is received ( a guess, and it worked). Since nothing in the first message is important it is dumped.  
