@@ -2,10 +2,25 @@
 _This write up sucks. I will rewrite this later_  
 This was a matter of securing a tcp connection and conversing with the server.  
 My first tcp connection was set to receive the basic 1024 bytes we learn in examples but that was not getting the entire intro message from the server.
- I used a function to receive from the socket until a "\n\n" is received ( a guess, and it worked). Since nothing in the first message is important it is dumped.  
+ I used a function to receive from the socket until a "\n\n" is received ( a guess, and it worked). Since nothing in the first message is important it is dumped.
+
+`    initialMessage = client.myreceive2Suffix(SUFFIX)`
+
+ ```
+     def myreceive2Suffix(self, suffix):
+        """Receive bytes over socket `sock` until we receive the `suffix`."""
+        message = self.myreceive()
+        if not message:
+            raise EOFError('socket closed')
+        while not message.endswith(suffix):
+            data = self.myreceive()
+            if not data:
+                raise IOError('received {!r} then socket closed'.format(message))
+            message += data
+        return message
+ ```
 The magic happens after I send a newline character. Then I again read from the socket until the "\n\n" character is found.  
-What the server sends is a string representation of a large string of integers. To turn this string into an array of integers 
-I first knocked the outer brackets (and a left over new line) off the string, split it at ", ", then created a new list 
+What the server sends is a string representation of a large string of integers. To turn this string into an array of integers, first knocked the outer brackets (and a left over new line) off the string, split it at ", ", then created a new list 
 of integers with pythons mapping function.   
 
 *EDIT*  I just learned about `literal_eval()` when attempting jay2... use that to turn the string into a python list instead of what I did here.  
