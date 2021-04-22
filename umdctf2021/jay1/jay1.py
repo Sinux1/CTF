@@ -27,7 +27,9 @@ if __name__ == "__main__":
     listRes = list(newarr.split(", "))
     listInts = list(map(int, listRes))
     result = maxSubArraySum(listInts, len(listInts))
+    
     response = "{}, {}, {}".format(*result).encode()
+    print("Response is: {} ".format(response.decode()))
     client.mysend(response)
 
     flag = client.myreceive()

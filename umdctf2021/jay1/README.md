@@ -38,10 +38,12 @@ j = end index of sub-array
 Press Enter to get the arr
 ```
 Pressing enter then returns an extremely large list of integers.  
+When executing `jay1.py` the result is:  
 ```
-Array : 88248
+Response is: 9363, 4195, 13808 
 Oh YES! I'm free! Here, a token of my appreciation:
 UMDCTF-{K4d4n35_41g0r1thm}
+
 ```
 Very rewarding flag.  
 
